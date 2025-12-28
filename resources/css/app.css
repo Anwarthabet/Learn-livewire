@@ -9,3 +9,112 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+.books-container {
+    max-width: 800px;
+    margin: 40px auto;
+    font-family: system-ui, Arial, sans-serif;
+}
+
+.books-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.book-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.book-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.book-title {
+    margin: 0;
+    font-size: 18px;
+}
+
+.book-author {
+    margin: 4px 0 0;
+    color: #666;
+}
+
+.book-delete {
+    background: none;
+    border: none;
+    color: #c00;
+    cursor: pointer;
+}
+
+.book-delete:hover {
+    text-decoration: underline;
+}
+
+.book-rating {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #444;
+}
+
+.posts-container {
+    max-width: 900px;
+    margin: 40px auto;
+    font-family: system-ui, Arial, sans-serif;
+}
+
+.page-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 16px;
+    background: #fff;
+}
+
+.post-title {
+    margin: 0 0 6px;
+    font-size: 20px;
+}
+
+.post-meta {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.post-excerpt {
+    font-size: 15px;
+    color: #444;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}

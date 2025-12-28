@@ -14,9 +14,8 @@ class BookList extends Component
     {
         Book::find($id)->delete();
     }
-  #[title("My Book List Component")]
     public function render()
     {
-        return view('livewire.book-list',['Books'=>Book::all()]);
+         return view('livewire.book-list', ['books' => Book::all(),]);
     }
 }

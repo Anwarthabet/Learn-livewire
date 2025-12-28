@@ -1,31 +1,48 @@
-<div>
-    <header class="flex justify-between items-center mb-4">
-        <h1 class="text-3xl font-bold">Book List Component</h1>
+<div class="max-w-4xl mx-auto p-6">
+
+    <header class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold text-gray-800">Books List</h1>
+        
     </header>
-    <div class="mb-4 bg-blue-200 p-4 rounded">
-        <h1>the Name is : {{ $name }}</h1>
-        <form wire:submit.prevent="$refresh" class="mb-4">
-            <label for="name" class="block mb-2 font-bold">Enter your name:</label>
-            <input type="text" id="name" wire:model.live="name" class="border p-2 rounded w-150"
-                placeholder="Your name here">
-            <button class="bg-blue-500 text-white px-4 py-2 rounded ml-2 hover :bg-blue-200">Submit</button>
-        </form>
-    </div>
-    <div class="bg-gray-900 p-4 rounded text-white">
-  <ul class="list">
-    @foreach($books as $book)
-        <li wire:key="{{ $book->id }}">
-            <button
-                wire:click="delete({{ $book->id }})">
-                Delete
-            </button>
 
-            <h3>{{ $book->title }}</h3>
-            <h4>{{ $book->author }}</h4>
-            <p>Rating: {{ $book->rating }}/10</p>
-        </li>
-    @endforeach
-</ul>
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        @foreach($books as $book)
+            <li
+                wire:key="{{ $book->id }}"
+                class="bg-white rounded-xl shadow-sm border border-gray-200 p-5 hover:shadow-md transition"
+            >
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900">
+                            {{ $book->title }}
+                        </h3>
+                        <h4 class="text-sm text-gray-600">
+                            by {{ $book->author }}
+                        </h4>
+                    </div>
 
-    </div>
+                    <button
+                        wire:click="delete({{ $book->id }})"
+                        class="text-red-500 text-sm hover:text-red-700 transition"
+                    >
+                        Delete
+                    </button>
+                </div>
+
+                <div class="mt-4 flex items-center justify-between">
+                    <span class="text-sm text-gray-500">Rating</span>
+                    <span class="text-sm font-medium text-indigo-600">
+                        {{ $book->rating }}/10
+                    </span>
+                </div>
+
+                <div class="mt-2 w-full bg-gray-200 rounded-full h-2">
+                    <div
+                        class="bg-indigo-500 h-2 rounded-full"
+                        style="width: {{ $book->rating * 10 }}%"
+                    ></div>
+                </div>
+            </li>
+        @endforeach
+    </ul>
 </div>
